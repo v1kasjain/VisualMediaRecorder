@@ -94,3 +94,34 @@ video {
 .timer {
   display: none;
 }
+
+.filter-cont {
+  position: absolute;
+  top: calc((100vh - 16rem) / 2);
+  left: 5rem;
+  height: 16rem;
+  width: 5rem;
+  background-color: aqua;
+}
+
+.filter {
+  height: 4rem;
+  background-image: url("https://picsum.photos/seed/picsum/200/300");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+}
+.orange {
+  background-color: #ffa50050;
+}
+.pink {
+  background-color: #ffc0cb50;
+}
+.brown {
+  background-color: #a52a2a50;
+}
+.transparent {
+  background-color: transparent
+  ;
+}

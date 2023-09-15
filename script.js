@@ -47,8 +47,22 @@ recordBtnCont.addEventListener("click", (e) => {
   }
 });
 
-// captureBtnCont.addEventListener("click", (e) =>{
-// });
+captureBtnCont.addEventListener("click", (e) =>{
+    let canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    let tool = canvas.getContext("2d");
+    tool.drawImage(video, 0,0, canvas.width, canvas.height);
+
+    let imageUrl = canvas.toDataURL();
+    let a = document.createElement("a");
+    a.href = imageUrl;
+    a.download = "image.jpg";
+    a.click();
+
+    //Uncaught TypeError: Failed to execute 'drawImage' on 'CanvasRenderingContext2D': The provided value is not of type '(CSSImageValue or HTMLCanvasElement or HTMLImageElement or HTMLVideoElement or ImageBitmap or OffscreenCanvas or SVGImageElement or VideoFrame)'.
+});
 
 // recording timer logic
 let timerId;
